@@ -19,3 +19,7 @@ cd /usr/local/spark
 # start spark
 export SPARK_HOME=/usr/local/spark
 sudo $SPARK_HOME/sbin/start-master.sh
+
+# finally, set environment variables in /etc/profile.d such that user does not have to execute the export commands
+cd /etc/profile.d
+sudo wget https://raw.githubusercontent.com/rebremer/AzureDevTestLabHadoopSparkOnUbuntuScript/master/Artifacts/Spark/setenvvarSpark.sh

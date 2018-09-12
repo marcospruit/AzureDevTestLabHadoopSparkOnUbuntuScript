@@ -1,5 +1,5 @@
 {
-    "title": "Spark On Ubuntu",
+    "title": "Spark",
     "publisher": "rebremer",
     "description": "Install Spark 2.3.1 on Ubuntu 16.04 VM in Microsoft Azure.",
     "tags": [
@@ -13,6 +13,6 @@
     "targetOsType": "Linux",
 	
   "runCommand": {
-    "commandToExecute": "['SparkUbuntuArtifact.sh']"
+    "commandToExecute": "['sh SparkUbuntuArtifact.sh']"
   }
 }
