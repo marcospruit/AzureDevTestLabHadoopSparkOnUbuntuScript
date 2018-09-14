@@ -7,7 +7,7 @@
       "JDK",
       "Linux"
     ],
-    "iconUri": "https://en.wikipedia.org/wiki/Apache_Hadoop#/media/File:Hadoop_logo_new.svg",
+    "iconUri": "https://en.wikipedia.org/wiki/Apache_Hive#/media/File:Apache_Hive_logo.svg",
     "targetOsType": "Linux",
 	
   "runCommand": {
