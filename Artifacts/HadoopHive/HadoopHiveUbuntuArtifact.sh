@@ -28,14 +28,12 @@ export PATH=$HADOOP_HOME/bin:$PATH
 sudo mv apache-hive-3.1.0-bin /usr/local/hive
 export HIVE_HOME=/usr/local/hive
 export PATH=$HIVE_HOME/bin:$PATH
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/ && export HADOOP_HOME=/usr/local/hadoop && export PATH=$HADOOP_HOME/bin:$PATH && export HIVE_HOME=/usr/local/hive && export PATH=$HIVE_HOME/bin:$PATH
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/ && export HADOOP_HOME=/usr/local/hadoop && export PATH=$HADOOP_HOME/bin:$PATH && export HIVE_HOME=/usr/local/hive && export PATH=$HIVE_HOME/bin:$PATH
 
 # create warehouse for hive
-hdfs dfs -mkdir -p /root/hive/warehouse
-cd /root/hive/warehouse
-$HIVE_HOME/bin/schematool -initSchema -dbType derby # run this command the before the first time you start hive 
-hive -e 'show databases;'
-hdfs dfs -chmod -R 777 /root/hive/warehouse # never do this in a production situation
+hdfs dfs -mkdir -p /user/hive/warehouse
+hdfs dfs -chmod -R 777 /user/hive/warehouse # never do this in a production situation
+#$HIVE_HOME/bin/schematool -initSchema -dbType derby # run this command the before the first time you start hive 
 # mv metastore_db metastore_db.tmp
 
 # test 1: version
