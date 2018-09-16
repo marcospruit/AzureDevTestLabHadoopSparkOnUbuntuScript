@@ -39,17 +39,8 @@ hdfs dfs -chmod 777 /user/hive/warehouse # never do this in a production situati
 # test 1: version
 hadoop version
 
-# test 2: Map Reduce
-mkdir input
-cp etc/hadoop/*.xml input
-hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.1.jar grep input output 'dfs[a-z.]+'
-cat output/*
-
-# test 3: HDFS
+# test 2: HDFS
 hdfs classpath
-
-# Set access right such that not only root user can execute hadoop jobs using hive
-hdfs dfs -chmod -R 777 /tmp/hadoop-root     # never do this in a production situation
 
 # finally, set environment variables in /etc/profile.d such that user does not have to execute the export commands
 cd /etc/profile.d
