@@ -33,22 +33,23 @@ export PATH=$HIVE_HOME/bin:$PATH
 # create warehouse for hive
 hdfs dfs -mkdir -p /user/hive/warehouse
 hdfs dfs -chmod 777 /user/hive/warehouse # never do this in a production situation
-hdfs dfs -chmod -R 777 /tmp/hadoop-root     # never do this in a production situation
 #$HIVE_HOME/bin/schematool -initSchema -dbType derby # run this command the before the first time you start hive 
 # mv metastore_db metastore_db.tmp
 
 # test 1: version
-cd /usr/local/hadoop
-bin/hadoop version
+hadoop version
 
 # test 2: Map Reduce
 mkdir input
 cp etc/hadoop/*.xml input
-bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.1.jar grep input output 'dfs[a-z.]+'
+hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.1.jar grep input output 'dfs[a-z.]+'
 cat output/*
 
 # test 3: HDFS
-bin/hdfs classpath
+hdfs classpath
+
+# Set access right such that not only root user can execute hadoop jobs using hive
+hdfs dfs -chmod -R 777 /tmp/hadoop-root     # never do this in a production situation
 
 # finally, set environment variables in /etc/profile.d such that user does not have to execute the export commands
 cd /etc/profile.d
