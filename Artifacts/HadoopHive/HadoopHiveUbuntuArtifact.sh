@@ -32,7 +32,8 @@ export PATH=$HIVE_HOME/bin:$PATH
 
 # create warehouse for hive
 hdfs dfs -mkdir -p /user/hive/warehouse
-hdfs dfs -chmod -R 777 /user/hive/warehouse # never do this in a production situation
+hdfs dfs -chmod g+w /user/hive/warehouse # never do this in a production situation
+hdfs dfs -chmod g+w /tmp/hadoop-root     # never do this in a production situation
 #$HIVE_HOME/bin/schematool -initSchema -dbType derby # run this command the before the first time you start hive 
 # mv metastore_db metastore_db.tmp
 
