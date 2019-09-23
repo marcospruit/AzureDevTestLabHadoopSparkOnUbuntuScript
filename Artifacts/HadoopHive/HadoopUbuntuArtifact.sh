@@ -13,11 +13,11 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/
 
 # download hadoop
 # wget http://apache.40b.nl/hadoop/common/hadoop-3.1.1/hadoop-3.1.1.tar.gz
-wget http://apache.cs.uu.nl/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz
-tar -xvf hadoop-3.2.0.tar.gz
+wget http://apache.cs.uu.nl/hadoop/common/hadoop-3.2.0/hadoop-3.2.1.tar.gz
+tar -xvf hadoop-3.2.1.tar.gz
 
 # move hadoop to usr directory
-sudo mv hadoop-3.2.0 /usr/local/hadoop
+sudo mv hadoop-3.2.1 /usr/local/hadoop
 export HADOOP_HOME=/usr/local/hadoop
 export PATH=$HADOOP_HOME/bin:$PATH
 
